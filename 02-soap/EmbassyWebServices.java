@@ -1,11 +1,12 @@
 package hw2;
 
 @javax.jws.WebService
-public interface VisaApplication {
+public interface EmbassyWebServices {
 
     @javax.jws.WebMethod
     public String reviewDocumentsAndGiveInterviewDate(String linkToFilesFromThePrivateCompanyAboutApplicant);
 
     @javax.jws.WebMethod
-    public String registerApplicantAndSendRequiredDocumentList(String name, String id, String country);
+    public String checkIfApplicantAttendedInterview(Boolean attended);
+
 }
