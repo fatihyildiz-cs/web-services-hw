@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://hw2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" targetNamespace="http://hw2">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://hw2">
+            <xs:element name="registerApplicantAndSendRequiredDocumentList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="registerApplicantAndSendRequiredDocumentListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="checkIfDocumentsAreSufficient">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="checkIfDocumentsAreSufficientResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="checkIfDocumentsAreSufficientRequest">
+        <wsdl:part name="parameters" element="ns:checkIfDocumentsAreSufficient"/>
+    </wsdl:message>
+    <wsdl:message name="checkIfDocumentsAreSufficientResponse">
+        <wsdl:part name="parameters" element="ns:checkIfDocumentsAreSufficientResponse"/>
+    </wsdl:message>
+    <wsdl:message name="registerApplicantAndSendRequiredDocumentListRequest">
+        <wsdl:part name="parameters" element="ns:registerApplicantAndSendRequiredDocumentList"/>
+    </wsdl:message>
+    <wsdl:message name="registerApplicantAndSendRequiredDocumentListResponse">
+        <wsdl:part name="parameters" element="ns:registerApplicantAndSendRequiredDocumentListResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="PrivateCompanyWebServicesPortType">
+        <wsdl:operation name="checkIfDocumentsAreSufficient">
+            <wsdl:input message="ns:checkIfDocumentsAreSufficientRequest" wsaw:Action="urn:checkIfDocumentsAreSufficient"/>
+            <wsdl:output message="ns:checkIfDocumentsAreSufficientResponse" wsaw:Action="urn:checkIfDocumentsAreSufficientResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="registerApplicantAndSendRequiredDocumentList">
+            <wsdl:input message="ns:registerApplicantAndSendRequiredDocumentListRequest" wsaw:Action="urn:registerApplicantAndSendRequiredDocumentList"/>
+            <wsdl:output message="ns:registerApplicantAndSendRequiredDocumentListResponse" wsaw:Action="urn:registerApplicantAndSendRequiredDocumentListResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PrivateCompanyWebServicesSoap11Binding" type="ns:PrivateCompanyWebServicesPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="checkIfDocumentsAreSufficient">
+            <soap:operation soapAction="urn:checkIfDocumentsAreSufficient" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="registerApplicantAndSendRequiredDocumentList">
+            <soap:operation soapAction="urn:registerApplicantAndSendRequiredDocumentList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="PrivateCompanyWebServicesSoap12Binding" type="ns:PrivateCompanyWebServicesPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="checkIfDocumentsAreSufficient">
+            <soap12:operation soapAction="urn:checkIfDocumentsAreSufficient" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="registerApplicantAndSendRequiredDocumentList">
+            <soap12:operation soapAction="urn:registerApplicantAndSendRequiredDocumentList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PrivateCompanyWebServices">
+        <wsdl:port name="PrivateCompanyWebServicesHttpSoap11Endpoint" binding="ns:PrivateCompanyWebServicesSoap11Binding">
+            <soap:address location="http://localhost:8080//services/hw2/PrivateCompanyWebServices"/>
+        </wsdl:port>
+        <wsdl:port name="PrivateCompanyWebServicesHttpSoap12Endpoint" binding="ns:PrivateCompanyWebServicesSoap12Binding">
+            <soap12:address location="http://localhost:8080//services/hw2/PrivateCompanyWebServices"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
